@@ -1,5 +1,7 @@
 # DataStructures
 
+<a href="https://codeclimate.com/github/imouaddine/data_structures"><img src="https://codeclimate.com/github/imouaddine/data_structures.png" /></a>
+
 TODO: Write a gem description
 
 ## Installation
