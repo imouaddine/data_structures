@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = DataStructures::VERSION
   spec.authors       = ["Imad Mouaddine"]
   spec.email         = ["imad@ecomstrategy.ca"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = "Provides basic data structures (Linked List, Stack)"
+  spec.description   = "Provides basic data structures. Useful for practice with algorithms"
   spec.homepage      = ""
   spec.license       = "MIT"
 

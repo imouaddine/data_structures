@@ -5,6 +5,8 @@ module DataStructures
 	class LinkedList
 		attr_accessor :head, :tail
 
+
+
 		def initialize(*args)
 			return unless args
 			@head = nil
@@ -224,6 +226,8 @@ module DataStructures
 		def length
 			to_a.length
 		end
+
+		alias_method :size, :length
 
 		def to_s
 			to_a.to_s

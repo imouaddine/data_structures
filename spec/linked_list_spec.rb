@@ -177,6 +177,19 @@ module DataStructures
 			end
 		end
 
+		describe '#length' do
+			it "return the correct length" do
+				expect(subject.length).to eq 4
+				expect(empty_list.length).to eq 0
+			end
+		end
+
+		describe '#size' do
+			it "alias of length" do
+				expect(subject.size).to eq subject.length
+			end
+		end
+
 		describe "#loop_length_of_circular_list" do
 			it "return true when linked list is circual" do
 				linked_list = LinkedList.new(92, 28, 21, 100)

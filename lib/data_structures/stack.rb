@@ -1,4 +1,5 @@
 module DataStructures
+	#Underflow
   class EmptyStackError < StandardError; end
 
 
@@ -11,6 +12,11 @@ module DataStructures
     def to_a
       @a.to_a
     end
+
+
+		def top
+			@a.head
+		end
 
     def push(value)
      @a.insert_at(value, 0)
@@ -28,6 +34,11 @@ module DataStructures
 			@a.head.nil?
 		end
 
+		def length
+			@a.length
+		end
+
+		alias_method :size, :length
   end
 
   

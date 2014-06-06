@@ -9,7 +9,13 @@ module DataStructures
         it "return an array" do 
           expect(subject.to_a).to eq [5, 2, 1, 9]
         end
-    end
+		end
+
+		describe "#top" do
+			it "return top element" do
+				expect(subject.top.value).to eq 5
+			end
+		end
     describe "#push" do 
       it "push values to the stack" do 
         subject.push(22)
@@ -42,6 +48,19 @@ module DataStructures
 		describe "#empty" do
 			it { expect(empty_stack.empty?).to eq true }
 			it { expect(subject.empty?).to eq false }
+		end
+
+		describe '#length' do
+			it "return the correct length" do
+				expect(subject.length).to eq 4
+				expect(empty_stack.length).to eq 0
+			end
+		end
+
+		describe '#size' do
+			it "alias of length" do
+				expect(subject.size).to eq subject.length
+			end
 		end
   end
 end
