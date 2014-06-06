@@ -33,9 +33,9 @@ module DataStructures
 			output
 		end
 
-		def insert_at(value, position)
+		def insert_at(value, index)
 			node = Node.new(value)
-			if position == 0
+			if index == 0
 				if @head
 					old_head = @head
 					node.next = old_head
@@ -43,6 +43,28 @@ module DataStructures
 				else
 					@head = @tail = node
 				end
+			else
+				current = head
+				previous = nil
+				counter = 0
+				while current
+					if index == counter
+						previous.next = node
+						node.next = current
+						return node
+					end
+					counter += 1
+					previous = current
+					current = current.next
+				end
+
+				if index == counter
+					previous.next = node
+					self.tail = node
+				else
+					raise IndexError, "position is greater than the length of the array"
+				end
+
 			end
 		end
 
@@ -54,9 +76,47 @@ module DataStructures
 				if index == 0
 					value = head.value
 					self.head = head.next
+				else
+					current = head
+					previous = nil
+					counter = 0
+					while current
+						if index == counter
+							previous.next = current.next
+							if previous.next == nil
+								self.tail = previous
+							end
+							return current
+						end
+						counter += 1
+						previous = current
+						current = current.next
+					end
+
+
+						raise IndexError, "position is greater than the length of the array"
+
 				end
 			end
 			value
+		end
+
+
+		def reverse!
+			if empty?
+				return self
+			end
+			current = head
+			previous = nil
+			while current
+				_next = current.next
+				current.next = previous
+				previous = current
+				current = _next
+			end
+			self.tail = head
+			self.head = previous
+			self
 		end
 
 
@@ -130,6 +190,7 @@ module DataStructures
 			end
 
 		end
+
 		def find_from_the_end(k)
 			if empty?
 				raise EmptyLinkedListError
@@ -163,6 +224,7 @@ module DataStructures
 		def length
 			to_a.length
 		end
+
 		def to_s
 			to_a.to_s
 		end
